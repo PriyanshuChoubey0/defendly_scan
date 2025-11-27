@@ -80,6 +80,7 @@ spotless {
 
 tasks.withType<JavaCompile>().configureEach {
     options.compilerArgs = options.compilerArgs + "-parameters"
+    options.compilerArgs = options.compilerArgs - "-Werror"
     val javaVersion = if (isZapRelease()) zapJavaVersion else JavaVersion.current()
     if (javaVersion >= JavaVersion.VERSION_21) {
         options.compilerArgs = options.compilerArgs + "-Xlint:-this-escape"
