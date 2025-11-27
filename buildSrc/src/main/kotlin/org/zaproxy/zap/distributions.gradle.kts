@@ -74,7 +74,7 @@ val distFiles by tasks.registering(Sync::class) {
     destinationDir = layout.buildDirectory.dir("distFiles").get().asFile
     from(jarWithBom)
     from(distDir) {
-        filesMatching(listOf("zap.bat", "zap.sh")) {
+        filesMatching(listOf("defendly.bat", "defendly.sh")) {
             filter<ReplaceTokens>("tokens" to startScriptTokenMap(jarWithBom.get().archiveFileName.get()))
         }
         exclude("README.weekly")
@@ -109,11 +109,11 @@ tasks.register<Zip>("distCrossplatform") {
     group = "Distribution"
     description = "Bundles the crossplatform distribution."
 
-    archiveFileName.set("ZAP_${project.version}_Crossplatform.zip")
+    archiveFileName.set("Defendly_${project.version}_Crossplatform.zip")
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
 
-    val topLevelDir = "ZAP_${project.version}"
+    val topLevelDir = "Defendly_${project.version}"
     from(distFiles) {
         into(topLevelDir)
     }
@@ -153,11 +153,11 @@ tasks.register<Zip>("distCore") {
     group = "Distribution"
     description = "Bundles the core distribution."
 
-    archiveFileName.set("ZAP_${project.version}_Core.zip")
+    archiveFileName.set("Defendly_${project.version}_Core.zip")
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
 
-    val topLevelDir = "ZAP_${project.version}"
+    val topLevelDir = "Defendly_${project.version}"
 
     from(distFiles) {
         into(topLevelDir)
@@ -172,12 +172,12 @@ tasks.register<Tar>("distLinux") {
     group = "Distribution"
     description = "Bundles the Linux distribution."
 
-    archiveFileName.set("ZAP_${project.version}_Linux.tar.gz")
+    archiveFileName.set("Defendly_${project.version}_Linux.tar.gz")
     compression = Compression.GZIP
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
 
-    val topLevelDir = "ZAP_${project.version}"
+    val topLevelDir = "Defendly_${project.version}"
     from(distFiles) {
         into(topLevelDir)
     }
@@ -192,7 +192,7 @@ listOf(
     MacArch("Arm64", "_aarch64", " (ARM64)", "aarch64", "b37759cce74d3104da243c5a4ca1f8a73d6d8811b4a1711028744ec5559f7eb0")
 ).forEach { it ->
 
-    val volumeName = "ZAP"
+    val volumeName = "Defendly"
     val appName = "$volumeName.app"
     val macOsJreDir = layout.buildDirectory.dir("macOsJre${it.suffix}").get().asFile
     val macOsJreUnpackDir = File(macOsJreDir, "unpacked")
@@ -260,7 +260,7 @@ listOf(
         val zapDir = "$appName/Contents/Java/"
         from(distFiles) {
             into(zapDir)
-            exclude(listOf("zap.bat", "zap.ico"))
+            exclude(listOf("defendly.bat", "zap.ico"))
         }
         from(bundledAddOns) {
             into("$zapDir/plugin")
@@ -303,12 +303,12 @@ val distDaily by tasks.registering(Zip::class) {
     group = "Distribution"
     description = "Bundles the daily distribution."
 
-    archiveFileName.set(dailyVersion.map { "ZAP_$it.zip" })
+    archiveFileName.set(dailyVersion.map { "Defendly_$it.zip" })
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
 
-    val rootDir = "ZAP_${dailyVersion.get()}"
-    val startScripts = listOf("zap.bat", "zap.sh")
+    val rootDir = "Defendly_${dailyVersion.get()}"
+    val startScripts = listOf("defendly.bat", "defendly.sh")
 
     from(jarDaily) {
         into(rootDir)
@@ -370,7 +370,7 @@ val prepareDistWeekly by tasks.registering(Sync::class) {
 
     dependsOn(buildWeeklyAddOns)
 
-    val startScripts = listOf("zap.bat", "zap.sh")
+    val startScripts = listOf("defendly.bat", "defendly.sh")
 
     from(jarDaily)
     from(distDir) {
@@ -398,12 +398,12 @@ tasks.register<Zip>("distWeekly") {
     group = "Distribution"
     description = "Bundles the weekly distribution."
 
-    archiveFileName.set(dailyVersion.map { "ZAP_WEEKLY_$it.zip" })
+    archiveFileName.set(dailyVersion.map { "Defendly_WEEKLY_$it.zip" })
     isPreserveFileTimestamps = false
     isReproducibleFileOrder = true
 
     from(prepareDistWeekly) {
-        into("ZAP_${dailyVersion.get()}")
+        into("Defendly_${dailyVersion.get()}")
     }
 }
 
