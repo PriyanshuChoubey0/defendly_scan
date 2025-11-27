@@ -147,9 +147,9 @@ public class ExtensionAutoUpdate extends ExtensionAdaptor
         this.setName(NAME);
         this.setOrder(1); // High order so that cmdline updates are installed asap
         this.downloadManager = new DownloadManager(HttpSender.CHECK_FOR_UPDATES_INITIATOR);
-        this.downloadManager.start();
+        // this.downloadManager.start();
         // Do this before it can get overwritten by the latest one
-        this.getPreviousVersionInfo();
+        // this.getPreviousVersionInfo();
     }
 
     @Override
@@ -794,6 +794,11 @@ public class ExtensionAutoUpdate extends ExtensionAdaptor
         if (Constant.isSilent()) {
             // Never make unsolicited requests in silent mode
             LOGGER.info("Shh! No check-for-update - silent mode enabled");
+            return;
+        }
+
+        // Defendly: Disable auto-update check
+        if (true) {
             return;
         }
 

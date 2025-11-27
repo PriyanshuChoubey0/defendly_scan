@@ -65,7 +65,7 @@ public class AboutPanel extends JPanel {
                     + "belong to their respective owners.</p></body></html>";
 
     private static final String HOMEPAGE =
-            "<html><body><p><a>https://www.zaproxy.org/</a></p></body></html>";
+            "<html><body><p><a>https://www.defendly.com/</a></p></body></html>";
 
     /** Constructs an {@code AboutPanel}. */
     public AboutPanel() {
