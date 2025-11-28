@@ -179,11 +179,11 @@ import org.zaproxy.zap.utils.I18N;
 import org.zaproxy.zap.utils.ZapXmlConfiguration;
 
 public final class Constant {
-    // ZAP: rebrand
-    public static final String PROGRAM_NAME = "ZAP";
-    public static final String PROGRAM_NAME_SHORT = "ZAP";
-    public static final String PROGRAM_NAME_CX = "ZAP by Checkmarx";
-    public static final String CX_BRAND_SUBHEAD = "by Checkmarx";
+    // Defendly: rebrand
+    public static final String PROGRAM_NAME = "Defendly";
+    public static final String PROGRAM_NAME_SHORT = "Defendly";
+    public static final String PROGRAM_NAME_CX = "Defendly";
+    public static final String CX_BRAND_SUBHEAD = "Security Testing Tool";
 
     /**
      * @deprecated (2.9.0) Do not use, it will be removed.
@@ -196,14 +196,14 @@ public final class Constant {
     @Deprecated
     public static final String ZAP_EXTENSIONS_PAGE = "https://github.com/zaproxy/zap-extensions";
 
-    public static final String ZAP_TEAM = "ZAP Dev Team";
+    public static final String ZAP_TEAM = "Defendly Team";
     public static final String PAROS_TEAM = "Chinotec Technologies";
 
     //  ************************************************************
     //  the config.xml MUST be set to be the same as the version_tag
     //  otherwise the config.xml will be overwritten everytime.
     //  ************************************************************
-    private static final String DEV_VERSION = "Dev Build";
+    private static final String DEV_VERSION = "2.17.0-SNAPSHOT";
     public static final String ALPHA_VERSION = "alpha";
     public static final String BETA_VERSION = "beta";
 
