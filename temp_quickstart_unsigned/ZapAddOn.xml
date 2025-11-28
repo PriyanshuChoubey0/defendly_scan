@@ -1,0 +1,108 @@
+<zapaddon>
+    <name>Quick Start</name>
+    <version>51</version>
+    <status>release</status>
+    <description>Provides a tab which allows you to quickly test a target application</description>
+    <author>ZAP Dev Team</author>
+    <url>https://www.zaproxy.org/docs/desktop/addons/quick-start/</url>
+    <changes>&lt;h3>Added&lt;/h3>
+&lt;ul>
+&lt;li>Stats counter to the main toolbar button (Issue 8375).&lt;/li>
+&lt;/ul>
+&lt;h3>Changed&lt;/h3>
+&lt;ul>
+&lt;li>Update minimum ZAP version to 2.16.0.&lt;/li>
+&lt;li>Depend on Passive Scanner add-on (Issue 7959).&lt;/li>
+&lt;/ul>
+&lt;h3>Fixed&lt;/h3>
+&lt;ul>
+&lt;li>An exception that prevented the look and feel from changing completely.&lt;/li>
+&lt;li>Issues setting the AJAX Spider options.&lt;/li>
+&lt;/ul>
+</changes>
+    <repo>https://github.com/zaproxy/zap-extensions/</repo>
+    <dependencies>
+        <addons>
+            <addon>
+                <id>callhome</id>
+                <version>&gt;= 0.0.1</version>
+            </addon>
+            <addon>
+                <id>network</id>
+                <version>&gt;= 0.3.0</version>
+            </addon>
+            <addon>
+                <id>pscan</id>
+                <version>&gt;= 0.1.0 &amp; &lt; 1.0.0</version>
+            </addon>
+            <addon>
+                <id>reports</id>
+                <version>&gt;= 0.4.0</version>
+            </addon>
+        </addons>
+    </dependencies>
+    <extensions>
+        <extension>org.zaproxy.zap.extension.quickstart.ExtensionQuickStart</extension>
+        <extension v="1">
+            <classname>org.zaproxy.zap.extension.quickstart.ajaxspider.ExtensionQuickStartAjaxSpider</classname>
+            <classnames>
+                <allowed>org.zaproxy.zap.extension.quickstart.ajaxspider</allowed>
+            </classnames>
+            <dependencies>
+                <addons>
+                    <addon>
+                        <id>selenium</id>
+                        <version>&gt;= 15.6.0</version>
+                    </addon>
+                    <addon>
+                        <id>spiderAjax</id>
+                        <version>23.*</version>
+                    </addon>
+                </addons>
+            </dependencies>
+        </extension>
+        <extension v="1">
+            <classname>org.zaproxy.zap.extension.quickstart.hud.ExtensionQuickStartHud</classname>
+            <classnames>
+                <allowed>org.zaproxy.zap.extension.quickstart.hud</allowed>
+            </classnames>
+            <dependencies>
+                <addons>
+                    <addon>
+                        <id>hud</id>
+                        <version>&gt;= 0.4.0</version>
+                    </addon>
+                </addons>
+            </dependencies>
+        </extension>
+        <extension v="1">
+            <classname>org.zaproxy.zap.extension.quickstart.launch.ExtensionQuickStartLaunch</classname>
+            <classnames>
+                <allowed>org.zaproxy.zap.extension.quickstart.launch</allowed>
+            </classnames>
+            <dependencies>
+                <addons>
+                    <addon>
+                        <id>selenium</id>
+                        <version>15.*</version>
+                    </addon>
+                </addons>
+            </dependencies>
+        </extension>
+        <extension v="1">
+            <classname>org.zaproxy.zap.extension.quickstart.spider.ExtensionQuickStartSpider</classname>
+            <classnames>
+                <allowed>org.zaproxy.zap.extension.quickstart.spider</allowed>
+            </classnames>
+            <dependencies>
+                <addons>
+                    <addon>
+                        <id>spider</id>
+                        <version>&gt;=0.1.0</version>
+                    </addon>
+                </addons>
+            </dependencies>
+        </extension>
+    </extensions>
+    <not-before-version>2.16.0</not-before-version>
+</zapaddon>

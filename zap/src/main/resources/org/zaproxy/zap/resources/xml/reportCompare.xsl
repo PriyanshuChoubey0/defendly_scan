@@ -9,12 +9,12 @@
   <xsl:template match="/report">
 <html>
 <head>
-<title>ZAP Session Compare Report</title>
+<title>Defendly Session Compare Report</title>
 
 </head>
 
 <body text="#000000">
-<p><strong>ZAP Session Compare Report</strong></p>
+<p><strong>Defendly Session Compare Report</strong></p>
 
 <script>
 function showAll() {

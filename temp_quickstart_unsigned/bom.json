@@ -1,0 +1,26 @@
+{
+  "bomFormat" : "CycloneDX",
+  "specVersion" : "1.5",
+  "serialNumber" : "urn:uuid:b2ea9b86-7646-4bed-8d39-d64c5e6439aa",
+  "version" : 1,
+  "metadata" : {
+    "timestamp" : "2025-01-10T10:39:10Z",
+    "tools" : [
+      { }
+    ],
+    "component" : {
+      "group" : "org.zaproxy.addon",
+      "name" : "quickstart",
+      "version" : "51",
+      "purl" : "pkg:maven/org.zaproxy.addon/quickstart@51?type=jar",
+      "type" : "library",
+      "bom-ref" : "pkg:maven/org.zaproxy.addon/quickstart@51?type=jar"
+    }
+  },
+  "dependencies" : [
+    {
+      "ref" : "pkg:maven/org.zaproxy.addon/quickstart@51?type=jar",
+      "dependsOn" : [ ]
+    }
+  ]
+}
