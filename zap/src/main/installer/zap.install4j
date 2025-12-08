@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="10.0.6" transformSequenceNumber="10">
-  <application name="Zed Attack Proxy by Checkmarx" applicationId="ZAP" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.version}_${compiler:sys.platform}" shortName="ZAP" publisher="ZAP" publisherWeb="https://www.zaproxy.org/" version="${compiler:version}" allPathsRelative="true" backupOnSave="true" macVolumeId="1369b1f423bb47f8" javaMinVersion="17">
+  <application name="Defendly AI" applicationId="Defendly" mediaFilePattern="${compiler:sys.shortName}_${compiler:sys.version}_${compiler:sys.platform}" shortName="Defendly" publisher="Defendly" publisherWeb="https://defendly.ai/" version="${compiler:version}" allPathsRelative="true" backupOnSave="true" macVolumeId="1369b1f423bb47f8" javaMinVersion="17">
     <languages skipLanguageSelection="true">
       <principalLanguage id="en" customLocalizationFile="./resources/Messages.properties" />
       <additionalLanguages>
@@ -19,9 +19,9 @@
       </additionalLanguages>
     </languages>
     <variables>
-      <variable name="longName" value="Zed Attack Proxy" />
-      <variable name="groupName" value="ZAP" />
-      <variable name="unixDirName" value="zaproxy" />
+      <variable name="longName" value="Defendly AI" />
+      <variable name="groupName" value="Defendly" />
+      <variable name="unixDirName" value="defendly" />
       <variable name="symlinkDir" value="/usr/local/bin" />
     </variables>
   </application>
@@ -50,8 +50,8 @@
     </entries>
   </files>
   <launchers>
-    <launcher name="Linux" id="26" external="true" menuName="ZAP" externalFile="zap.sh" />
-    <launcher name="Windows (.exe)" id="79" external="true" menuName="${compiler:sys.shortName} ${compiler:sys.version}" externalFile="ZAP.exe" />
+    <launcher name="Linux" id="26" external="true" menuName="Defendly" externalFile="defendly.sh" />
+    <launcher name="Windows (.exe)" id="79" external="true" menuName="${compiler:sys.shortName} ${compiler:sys.version}" externalFile="Defendly.exe" />
   </launchers>
   <installerGui>
     <applications>
@@ -60,22 +60,22 @@
           <property name="customIconImageFiles">
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap16x16.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap32x32.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap48x48.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap128x128.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
           </property>
@@ -106,7 +106,7 @@ if (Util.isWindows()) {
     String longName = context.getCompilerVariable("longName");
     context.setVariable("sys.programGroupName", baseDir + "\\" + longName);
     
-    String innoKeyName = "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\OWASP ZAP_is1";
+    String innoKeyName = "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Defendly_is1";
     String innoValueName = "UninstallString";
     
     String innoUninstaller = (String) WinRegistry.getValue(RegistryRoot.HKEY_CURRENT_USER, innoKeyName, innoValueName);
@@ -115,7 +115,7 @@ if (Util.isWindows()) {
     }
     
     if (innoUninstaller == null || innoUninstaller.isEmpty()) {
-        innoKeyName = "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\OWASP ZAP_is1";
+        innoKeyName = "SOFTWARE\\WOW6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Defendly_is1";
         innoUninstaller = (String) WinRegistry.getValue(RegistryRoot.HKEY_CURRENT_USER, innoKeyName, innoValueName);
         if (innoUninstaller == null || innoUninstaller.isEmpty()) {
             innoUninstaller = (String) WinRegistry.getValue(RegistryRoot.HKEY_LOCAL_MACHINE, innoKeyName, innoValueName);
@@ -140,7 +140,7 @@ return true;</property>
                 <serializedBean>
                   <property name="script">
                     <object class="com.install4j.api.beans.ScriptProperty">
-                      <property name="value" type="string">ApplicationRegistry.ApplicationInfo[] applicationInfos = ApplicationRegistry.getApplicationInfoById("OWASP ZAP");
+                      <property name="value" type="string">ApplicationRegistry.ApplicationInfo[] applicationInfos = ApplicationRegistry.getApplicationInfoById("Defendly");
 
 if (applicationInfos.length &gt; 0) {
    context.setVariable("uninstallOldDir", applicationInfos[0].getInstallationDirectory().getPath());
@@ -634,12 +634,12 @@ return;</preActivation>
                   <property name="name" type="string">${compiler:sys.shortName} ${compiler:sys.version}</property>
                   <property name="unixIconFile">
                     <object class="com.install4j.api.beans.ExternalFile">
-                      <string>../resources/resource/zap1024x1024.png</string>
+                      <string>../resources/resource/Defendly.icns</string>
                     </object>
                   </property>
                   <property name="winIconFile">
                     <object class="com.install4j.api.beans.ExternalFile">
-                      <string>../resources/resource/zap.ico</string>
+                      <string>../resources/resource/Defendly.ico</string>
                     </object>
                   </property>
                 </serializedBean>
@@ -682,7 +682,7 @@ return;</preActivation>
                     </object>
                   </property>
                   <property name="logText" type="boolean" value="false" />
-                  <property name="text" type="string">Icon=${installer:sys.contentDir}/zap1024x1024.png</property>
+                  <property name="text" type="string">Icon=${installer:sys.contentDir}/Defendly.ico</property>
                 </serializedBean>
                 <condition>!context.getBooleanVariable("sys.programGroupDisabled")</condition>
               </action>
@@ -711,22 +711,22 @@ return;</preActivation>
           <property name="customIconImageFiles">
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap16x16.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap32x32.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap48x48.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
             <add>
               <object class="com.install4j.api.beans.ExternalFile">
-                <string>../resources/resource/zap128x128.png</string>
+                <string>../resources/resource/defendly-logo.png</string>
               </object>
             </add>
           </property>

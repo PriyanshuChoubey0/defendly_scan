@@ -1,0 +1,114 @@
+<zapaddon>
+    <name>Report Generation</name>
+    <version>0.38.1</version>
+    <status>release</status>
+    <description>Official ZAP Reports.</description>
+    <author>ZAP Dev Team</author>
+    <url>https://www.zaproxy.org/docs/desktop/addons/report-generation/</url>
+    <changes>&lt;h3>Fixed&lt;/h3>
+&lt;ul>
+&lt;li>Themes are once again properly taken into account when generating reports (Issue 8854).&lt;/li>
+&lt;/ul>
+&lt;h3>Added&lt;/h3>
+&lt;ul>
+&lt;li>Allow report data to be cleaned up after the report generation.&lt;/li>
+&lt;li>Allow reports to read HTTP messages through the report helper.&lt;/li>
+&lt;/ul>
+</changes>
+    <repo>https://github.com/zaproxy/zap-extensions/</repo>
+    <dependencies>
+        <addons>
+            <addon>
+                <id>commonlib</id>
+                <version>&gt;= 1.17.0 &amp; &lt; 2.0.0</version>
+            </addon>
+        </addons>
+    </dependencies>
+    <extensions>
+        <extension>org.zaproxy.addon.reports.ExtensionReports</extension>
+        <extension v="1">
+            <classname>org.zaproxy.addon.reports.automation.ExtensionReportAutomation</classname>
+            <classnames>
+                <allowed>org.zaproxy.addon.reports.automation</allowed>
+            </classnames>
+            <dependencies>
+                <addons>
+                    <addon>
+                        <id>automation</id>
+                        <version>&gt;=0.42.0</version>
+                    </addon>
+                </addons>
+            </dependencies>
+        </extension>
+    </extensions>
+    <files>
+        <file>reports/high-level-report/Messages.properties</file>
+        <file>reports/high-level-report/report.html</file>
+        <file>reports/high-level-report/resources/Chart.min.css</file>
+        <file>reports/high-level-report/resources/Chart.min.js</file>
+        <file>reports/high-level-report/resources/bootstrap.bundle.min.js</file>
+        <file>reports/high-level-report/resources/bootstrap.min.css</file>
+        <file>reports/high-level-report/resources/main.css</file>
+        <file>reports/high-level-report/resources/main.js</file>
+        <file>reports/high-level-report/resources/normalize.css</file>
+        <file>reports/high-level-report/resources/zap-by-checkmarx.png</file>
+        <file>reports/high-level-report/template.yaml</file>
+        <file>reports/modern/Messages.properties</file>
+        <file>reports/modern/report.html</file>
+        <file>reports/modern/resources/chart.min.css</file>
+        <file>reports/modern/resources/chart.min.js</file>
+        <file>reports/modern/resources/common.css</file>
+        <file>reports/modern/resources/console.css</file>
+        <file>reports/modern/resources/construction.css</file>
+        <file>reports/modern/resources/corporate.css</file>
+        <file>reports/modern/resources/marketing.css</file>
+        <file>reports/modern/resources/mountain.css</file>
+        <file>reports/modern/resources/mountain.jpg</file>
+        <file>reports/modern/resources/nature.css</file>
+        <file>reports/modern/resources/ocean.css</file>
+        <file>reports/modern/resources/plutonium.css</file>
+        <file>reports/modern/resources/skyline.css</file>
+        <file>reports/modern/resources/skyline.jpg</file>
+        <file>reports/modern/resources/technology.css</file>
+        <file>reports/modern/resources/zap32x32.png</file>
+        <file>reports/modern/template.yaml</file>
+        <file>reports/risk-confidence-html/Messages.properties</file>
+        <file>reports/risk-confidence-html/report.html</file>
+        <file>reports/risk-confidence-html/resources/normalize/LICENSE.md</file>
+        <file>reports/risk-confidence-html/resources/normalize/normalize.css</file>
+        <file>reports/risk-confidence-html/resources/themes/original/colors.css</file>
+        <file>reports/risk-confidence-html/resources/themes/original/main.css</file>
+        <file>reports/risk-confidence-html/resources/zap32x32.png</file>
+        <file>reports/risk-confidence-html/template.yaml</file>
+        <file>reports/sarif-json/README.md</file>
+        <file>reports/sarif-json/report.json</file>
+        <file>reports/sarif-json/template.yaml</file>
+        <file>reports/traditional-html-plus/Messages.properties</file>
+        <file>reports/traditional-html-plus/report.html</file>
+        <file>reports/traditional-html-plus/resources/Chart.min.css</file>
+        <file>reports/traditional-html-plus/resources/Chart.min.js</file>
+        <file>reports/traditional-html-plus/resources/common.css</file>
+        <file>reports/traditional-html-plus/resources/dark.css</file>
+        <file>reports/traditional-html-plus/resources/light.css</file>
+        <file>reports/traditional-html-plus/resources/zap-by-checkmarx.png</file>
+        <file>reports/traditional-html-plus/template.yaml</file>
+        <file>reports/traditional-html/Messages.properties</file>
+        <file>reports/traditional-html/report.html</file>
+        <file>reports/traditional-html/template.yaml</file>
+        <file>reports/traditional-json-plus/report.json</file>
+        <file>reports/traditional-json-plus/template.yaml</file>
+        <file>reports/traditional-json/report.json</file>
+        <file>reports/traditional-json/template.yaml</file>
+        <file>reports/traditional-md/Messages.properties</file>
+        <file>reports/traditional-md/report.md</file>
+        <file>reports/traditional-md/template.yaml</file>
+        <file>reports/traditional-pdf/Messages.properties</file>
+        <file>reports/traditional-pdf/report.html</file>
+        <file>reports/traditional-pdf/template.yaml</file>
+        <file>reports/traditional-xml-plus/report.xml</file>
+        <file>reports/traditional-xml-plus/template.yaml</file>
+        <file>reports/traditional-xml/report.xml</file>
+        <file>reports/traditional-xml/template.yaml</file>
+    </files>
+    <not-before-version>2.16.0</not-before-version>
+</zapaddon>

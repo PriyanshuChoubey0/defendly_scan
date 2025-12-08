@@ -34,18 +34,18 @@ launch4j {
     version.set("${project.version}")
     textVersion.set("${project.version}")
 
-    outfile.set("ZAP.exe")
+    outfile.set("Defendly.exe")
     chdir.set("")
-    icon.set(file("src/main/resources/resource/zap.ico").toString())
+    icon.set(file("src/main/resources/resource/Defendly.ico").toString())
 
     maxHeapSize.set(512)
     maxHeapPercent.set(25)
 
-    fileDescription.set("Zed Attack Proxy")
-    copyright.set("The Zed Attack Proxy Project")
-    productName.set("Zed Attack Proxy")
-    companyName.set("ZAP")
-    internalName.set("ZAP")
+    fileDescription.set("Defendly AI")
+    copyright.set("Defendly AI")
+    productName.set("Defendly AI")
+    companyName.set("Defendly")
+    internalName.set("Defendly")
 
     downloadUrl.set("https://adoptium.net/")
 }
@@ -74,7 +74,7 @@ val prepareLinuxInstallerData by tasks.registering(Sync::class) {
                 "*macos*.zap",
                 "*windows*.zap"))
     }
-    from(file("src/main/resources/resource/zap1024x1024.png"))
+    from(file("src/main/resources/resource/defendly-logo.png"))
 }
 
 val createExe by tasks.existing(Launch4jLibraryTask::class) {

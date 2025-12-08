@@ -548,7 +548,7 @@ public class CoreAPI extends ApiImplementor implements SessionListener {
             return sendHttpMessage(request, getParam(params, PARAM_FOLLOW_REDIRECTS, false), name);
         } else if (ACTION_SHUTDOWN.equals(name)) {
             Thread thread =
-                    new Thread("ZAP-Shutdown") {
+                    new Thread("Defendly-Shutdown") {
                         @Override
                         public void run() {
                             try {
@@ -1704,7 +1704,7 @@ public class CoreAPI extends ApiImplementor implements SessionListener {
             reportParams.put("template", template);
             reportParams.put("reportDir", xmlFile.getParentFile().getAbsolutePath());
             reportParams.put("reportFileName", xmlFile.getName());
-            reportParams.put("title", "ZAP Scanning Report");
+            reportParams.put("title", "Defendly Scanning Report");
             reportApi.handleApiAction("generate", reportParams);
 
             msg.setResponseBody(

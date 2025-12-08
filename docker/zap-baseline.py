@@ -394,16 +394,16 @@ def main(argv):
                 jobs.append(get_af_output_summary(('Short', 'Long')[detailed_output], summary_file, config_dict, config_msg))
 
                 if report_html:
-                    jobs.append(get_af_report('traditional-html', base_dir, report_html, 'ZAP Scanning Report', ''))
+                    jobs.append(get_af_report('traditional-html', base_dir, report_html, 'Defendly Scanning Report', ''))
 
                 if report_md:
-                    jobs.append(get_af_report('traditional-md', base_dir, report_md, 'ZAP Scanning Report', ''))
+                    jobs.append(get_af_report('traditional-md', base_dir, report_md, 'Defendly Scanning Report', ''))
 
                 if report_xml:
-                    jobs.append(get_af_report('traditional-xml', base_dir, report_xml, 'ZAP Scanning Report', ''))
+                    jobs.append(get_af_report('traditional-xml', base_dir, report_xml, 'Defendly Scanning Report', ''))
 
                 if report_json:
-                    jobs.append(get_af_report('traditional-json', base_dir, report_json, 'ZAP Scanning Report', ''))
+                    jobs.append(get_af_report('traditional-json', base_dir, report_json, 'Defendly Scanning Report', ''))
 
                 yaml.dump({'jobs': jobs}, yf)
 

@@ -243,7 +243,7 @@ public final class Constant {
     public static String PROGRAM_VERSION = DEV_VERSION;
     public static String PROGRAM_TITLE = PROGRAM_NAME + " " + PROGRAM_VERSION;
 
-    public static final String SYSTEM_PAROS_USER_LOG = "zap.user.log";
+    public static final String SYSTEM_PAROS_USER_LOG = "defendly.user.log";
 
     public static final String FILE_SEPARATOR = System.getProperty("file.separator");
     public static final String FILE_CONFIG_NAME = "config.xml";
@@ -292,7 +292,7 @@ public final class Constant {
     public String DBNAME_UNTITLED =
             FOLDER_SESSION + System.getProperty("file.separator") + "untitled";
 
-    public static final String FILE_PROGRAM_SPLASH = "resource/zap128x128.png";
+    public static final String FILE_PROGRAM_SPLASH = "resource/defendly-logo.png";
 
     // Accelerator keys - Default: Windows
     public static String ACCELERATOR_UNDO = "control Z";
